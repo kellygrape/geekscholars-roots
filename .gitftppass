@@ -1,0 +1,9 @@
+{
+  "default": {
+      "host": "ftp.moviehawk.net",
+      "port": 21,
+      "user": "moviehaw",
+      "password": "aphs2002",
+      "remotePath": "public_html/wp-content/themes/geekscholars-roots"
+  }
+}

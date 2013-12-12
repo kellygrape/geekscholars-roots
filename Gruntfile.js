@@ -29,6 +29,14 @@ module.exports = function(grunt) {
         }
       }
     },
+    git_ftp: {
+      production: {
+        options: {
+          'hostFile':'.gitftppass',
+          'host':'default'
+        }
+      }
+    },
     uglify: {
       dist: {
         files: {
@@ -108,6 +116,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-wp-version');
+  grunt.loadNpmTasks('grunt-git-ftp');
+
 
   // Register tasks
   grunt.registerTask('default', [
