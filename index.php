@@ -37,6 +37,8 @@ if(get_field('homepage_slider')):
     $size = "full"; // (thumbnail, medium, large, full or custom size)
     echo wp_get_attachment_image( $attachment_id, $size );
     ?>
+    <div class="box-caption">
+    <?php the_sub_field('slider_caption'); ?>
     </div>
     <?php endwhile; ?>
   </div>
