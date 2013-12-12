@@ -61,7 +61,6 @@ wp_reset_postdata();?>
     ?>
 		<section class="slider">
 		  <div class="flexslider">
-  		  <?php make_the_slides($post->ID); ?>
 		  </div>
 		</section>
 		
@@ -71,7 +70,6 @@ wp_reset_postdata();?>
 		    <div class="episodenumber">
           <?php echo(get_post_meta($post->ID, 'geekscholars_episode_number', true)); ?>
         </div>
-		    <?php echo segments_list($post->ID); ?>
 		    </div>
 		 
 		  
