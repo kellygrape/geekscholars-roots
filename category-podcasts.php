@@ -10,6 +10,7 @@
   
   
   
+<!--
 <?php
   // update the slider data 
   $field_key = "field_52a8a25ef34d0";
@@ -22,6 +23,7 @@
     update_field( $field_key, $value, $post->ID );
   }
   ?>
+-->
 				
 				
 				
