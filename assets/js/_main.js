@@ -5,11 +5,13 @@ var geekScholarsSite = {
   // All pages
   common: {
     init: function() {
+      
+    },
+    finalize: function() { 
       $('[data-toggle="tooltip"]').tooltip({'placement': 'bottom'});
       $('.carousel').carousel();
     	console.log('test');
-    },
-    finalize: function() { }
+    }
   },
   // Home page
   home: {
