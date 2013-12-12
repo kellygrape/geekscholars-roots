@@ -1,0 +1,53 @@
+/*
+Theme Name:         Roots - Geekscholars
+Theme URI:          http://roots.io/
+Description:        Roots is a WordPress starter theme based on HTML5 Boilerplate & Bootstrap. <a href="https://github.com/roots/roots/contributors">Contribute on GitHub</a>
+Version:            6.5.1
+Author:             Ben Word
+Author URI:         http://benword.com/
+
+License:            MIT License
+License URI:        http://opensource.org/licenses/MIT
+*/
+@import url(http://fonts.googleapis.com/css?family=Francois+One);
+h1{
+	font-size: 2em;
+}
+h2{
+	font-size: 1.5em; 
+}
+h3{
+	font-size: 1.25em;
+}
+article.podcast-archive{
+margin-bottom:15px;
+border-bottom: 1px solid #ccc;
+padding-bottom:15px;
+}
+.segment-list h3, .podcast-meta i{
+	color: #DD5600;
+}
+.episode-number{
+	font-family: 'Francois One';
+	border-right: 3px solid;
+	padding-right: 10px;
+	color: #666;
+}
+.segment-list h3{
+	display:inline-block;
+	font-family: 'Francois One';
+	margin: 0 10px 0 0;
+	font-size: 1em;
+}
+.episodenumber {
+	margin-right: 15px;
+	margin-top: 15px;
+	float: left;
+	background: #999;
+	border-radius: 100%;
+	box-shadow: 1px 1px 1px #444;
+	color: #FFF;
+	font-size: 15px;
+	padding: 10px;
+	text-align: center;
+}

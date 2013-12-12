@@ -1,0 +1,141 @@
+/*!
+ * Roots 6.5.1
+ */
+
+@import "bootstrap/bootstrap.less";
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+body { }
+
+
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.banner {
+  &.navbar{
+    border-bottom: 10px solid darken(@brand-primary, 15%);
+    a{
+      font-family: @latofont;
+    }
+  }
+}
+
+
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.content { }
+
+
+
+/* ==========================================================================
+   Primary Content
+   ========================================================================== */
+
+.main { }
+
+/* Gallery Shortcode */
+.gallery-row { padding: 15px 0; }
+
+
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+.sidebar { 
+
+}
+.widget h3{
+  text-transform: uppercase;
+  font-size: 1.25em;
+}
+/* Widgets */
+.widgettitle{
+  font-size:14px;
+  text-transform: uppercase;
+}
+.widget ul{
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+.widget ul li{
+  display:block;
+  border-bottom: 1px solid #DDD;
+}
+.widget ul li a, .widget ul li.recentcomments{
+  display: block;
+  padding: 5px 10px;
+  background:transparent;
+  text-decoration:none;
+  -webkit-transition: color 250ms, background 200ms;
+  -moz-transition:    color 250ms, background 200ms;
+  -ms-transition:     color 250ms, background 200ms;
+  -o-transition:      color 250ms, background 200ms;
+  transition:         color 250ms, background 200ms;
+}
+.widget ul li a:hover{
+  background:#3FA9F5;
+  color:white;
+  text-shadow: 0 1px 0 #999;
+}
+
+/* ==========================================================================
+   Posts
+   ========================================================================== */
+
+.hentry header { }
+.hentry time { }
+.hentry .byline { }
+.hentry .entry-content { 
+  img{
+    .img-responsive();
+  }
+}
+.hentry footer { }
+
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.content-info { }
+
+
+
+/* ==========================================================================
+   WordPress Generated Classes
+   See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+   ========================================================================== */
+
+.aligncenter { display: block; margin: 0 auto; }
+.alignleft { float: left; }
+.alignright { float: right; }
+figure.alignnone { margin-left: 0; margin-right: 0; }
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media (min-width: @screen-sm-min) { 
+  .sidebar{
+    margin-top: 100px;
+  }
+}
+
+@media (min-width: @screen-md-min) { 
+  
+}
+
+@media (min-width: @screen-lg-min) { }
