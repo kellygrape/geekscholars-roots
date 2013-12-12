@@ -6,6 +6,7 @@ var geekScholarsSite = {
   common: {
     init: function() {
       $('[data-toggle="tooltip"]').tooltip({'placement': 'bottom'});
+      $('.carousel').carousel();
     	console.log('test');
     },
     finalize: function() { }
