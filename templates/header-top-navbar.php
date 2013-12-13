@@ -7,7 +7,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
+      <span class="visible-xs navbar-brand">Menu</span>
+      <?php if(!is_front_page()): ?><a class="navbar-brand hidden-xs" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/geekscholarslogo.png" alt="Geek Scholars Logo">
+</a><?php endif; ?>
     </div>
 
     <nav class="collapse navbar-collapse" role="navigation">

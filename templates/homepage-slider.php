@@ -10,12 +10,15 @@ if(get_field('homepage_slider')):
     <?php $v = 0; ?>
     <?php while(has_sub_field('homepage_slider')):?>
     <div class="item <?php if($v==0){ ?>active<?php $v++;} ?>">
-      <div class="slider-image"><?php
+      <div class="slider-image">
+      <a href="<?php echo get_permalink();?><?php
       $theimg = get_sub_field('slider_image');
       $attachment_id = $theimg['id'];
       $size = "full"; // (thumbnail, medium, large, full or custom size)
       echo wp_get_attachment_image( $attachment_id, $size );
-      ?></div>
+      ?>
+      </div>
+      </div>
       <div class="box-caption">
       <?php the_sub_field('slider_caption'); ?>
       </div>

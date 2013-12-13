@@ -60,7 +60,7 @@ foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 
 
 <section class="row front-recent-podcasts">
-    <h2>Recent Podcasts</h2>
+    <h2 class="prevepisodes">Previous Episodes</h2>
     <?php
     $myposts = get_posts(array( 'category_name' => 'podcasts', 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC', 'offset' => 1 ));
     foreach ( $myposts as $post ) : setup_postdata( $post );
