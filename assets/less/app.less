@@ -66,6 +66,41 @@ padding-bottom:15px;
   }
 }
 
+.logo{ 
+  header &{
+    width:50%;
+  }
+  .over-slider .logo{ 
+    display:none; 
+    @media (min-width: @screen-sm-min) { 
+      display:block;
+    }
+  }
+  margin: 5px auto;
+  text-align: center;
+  position: relative;
+  z-index: 450;
+  background-color: transparent;
+  padding: 0 0 10px;
+  img{
+    background: white;
+    max-width:100%;
+    height:auto;
+    border-radius:          100%;
+    margin:-10px auto -20px;
+    padding:15px 5px;
+  }
+  &.over-slider img {
+    max-width: 100px;
+  }
+}
+
+
+
+
+
+
+
 
 /* ==========================================================================
    Carousel

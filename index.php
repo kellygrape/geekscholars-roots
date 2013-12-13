@@ -7,12 +7,21 @@
 
 
 
-<section class="over-slider clearfix">
-	<?php get_template_part('sitepart', 'social'); ?>
-	<div class="logo over-slider">
+<section class="over-slider row">
+  <div class="col-md-3">
+    <nav class="social-area">
+    	<ul class="clearfix">
+    	  <li class="facebook"><a href="https://www.facebook.com/geekscholars" class="tip" title="Visit us on Facebook"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/facebook.png" alt="Facebook"></a></li>
+    	  <li class="twitter"><a href="https://twitter.com/GeekScholars" class="tip" title="Follow us on Twitter"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/twitter.png" alt="twitter"></a></li>
+    	  <li class="itunes"><a href="https://itunes.apple.com/us/podcast/geekscholars-movie-news/id459567560" class="tip" title="Visit GeekScholars on iTunes"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/itunes.png" alt="Visit GeekScholars on iTunes"></a></li>
+    	  <li class="email"><a href="mailto:mail@geekscholars.com" class="tip" title="Email GeekScholars"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/email.png" alt="Email GeekScholars"></a></li>
+    	</ul>
+    </nav>
+  </div>
+  <div class="col-md-6 logo over-slider">
 		<img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/geekscholarslogo.png" alt="Geek Scholars Logo">
 	</div>
-	<section class="homepage-search clearfix">
+	<section class="homepage-search col-md-3">
 		<?php get_search_form(); ?>
 	</section>
 </section>
