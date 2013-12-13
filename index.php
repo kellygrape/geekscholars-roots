@@ -53,7 +53,7 @@ if(get_field('homepage_slider')):
   </a>
 </div>
 <?php endif; ?>
-<?php endforeach; 
+<?php endforeach; ?>
     <div class="col-sm-3 podcast-meta">
         <i class="glyphicon glyphicon-time"></i> <?php echo get_the_date(); ?>
     </div>
