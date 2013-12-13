@@ -1,4 +1,3 @@
-<?php get_template_part('templates/page', 'header'); ?>
 <?php if (!have_posts()) : ?>
   <div class="alert alert-warning">
     <?php _e('Sorry, no results were found.', 'roots'); ?>
@@ -9,7 +8,6 @@
 
 <?php
 // Show the most recent post in the podcast category, with its slider images as a carousel
-
 $args = array( 'category_name' => 'podcasts', 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC' );
 
 $myposts = get_posts( $args );
@@ -52,8 +50,7 @@ if(get_field('homepage_slider')):
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div>
-<?php endif; ?>
-<?php endforeach; ?>
+<?php endif; //if get_field homepageslider ?>
     <div class="col-sm-3 podcast-meta">
         <i class="glyphicon glyphicon-time"></i> <?php echo get_the_date(); ?>
     </div>
@@ -66,7 +63,32 @@ if(get_field('homepage_slider')):
     
         <?php endwhile;endif; ?>
     </div>
-wp_reset_postdata();?>
+
+<?php endforeach; ?>
+<?php wp_reset_postdata();?>
+
+<div class="row front-recent-podcasts">
+    <h2>Recent Podcasts</h2>
+    <?php
+    // Show the most recent post in the podcast category, with its slider images as a carousel
+    $args = array( 'category_name' => 'podcasts', 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC', 'offset' => 1 );
+    
+    $myposts = get_posts( $args );
+    foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+    <div class="col-md-4">
+        <figure class="post-image"><?php the_post_thumbnail() ?></figure>
+        <h3><?php echo the_title(); ?></h3>
+        <?php while(has_sub_field('segment')): ?>
+        <?php $term = get_term_by('id',get_sub_field('segment_type'),'segmenttax'); ?>
+        <img class="segment-icon" data-toggle="tooltip" title="<?php the_sub_field('segment_description'); ?>" src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/icons/<?php echo($term->slug); ?>.png">
+    
+        <?php endwhile;endif; ?>
+    </div>
+    <?php endforeach; ?>
+    <?php wp_reset_postdata();?>
+</div>
+
+
 
 
 	</div> <!-- #main -->
