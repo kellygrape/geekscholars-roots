@@ -131,11 +131,11 @@ padding-bottom:15px;
 
 
 
-
-
 /* ==========================================================================
-   Carousel
+   Styles for the Home Page
    ========================================================================== */
+
+//Carousel
 #podcast-slider{
   border-radius: 4px;
   .box-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
@@ -171,15 +171,32 @@ padding-bottom:15px;
   }
 }
 .frontpage-slider{
-  h3.episode-number{
+  .episode-number{
     margin:0;
   }
 }
+
+// Front Recent Podcasts (three list)
 .front-recent-podcasts{
+  margin-top:40px;
+  h2{
+    text-align: center;
+    .text-hide();
+    background:url(../img/previousepisodes2.png) no-repeat;
+  }
   img{
     .img-responsive();
   }
+  .col-md-4 {
+    padding: 10px;
+    article {
+      box-shadow: 0 0 10px #ccc;
+      padding: 10px;
+    }
+  }
+
 }
+
 /* ==========================================================================
    Content
    ========================================================================== */
@@ -279,7 +296,11 @@ padding-bottom:15px;
    Footer
    ========================================================================== */
 
-.content-info { }
+.content-info {
+  background-color: @brand-primary;
+  border-top:10px solid darken(@brand-primary, 15%);
+  text-align: center;
+}
 
 
 
