@@ -39,5 +39,5 @@
           $gsmnicon = 'gsicon-film-clip';
     }
   ?>
-  <button data-toggle="tooltip" title="<?php the_sub_field('segment_description'); ?>"><i class="segment-icon-fa <?php echo($gsmnicon); ?>"></i></button>
+  <button data-toggle="tooltip" title="<?php the_sub_field('segment_description'); ?>" class="btn btn-link btn-segmenticon"><i class="segment-icon-fa <?php echo($gsmnicon); ?>"></i></button>
 <?php endwhile; ?>
