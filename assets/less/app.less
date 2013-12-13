@@ -77,7 +77,10 @@ padding-bottom:15px;
     width:50%;
   }
   &.over-slider{ 
-    display:none; 
+    display:none;
+    img{
+      max-width: 100px;
+    }
     @media (min-width: @screen-sm-min) { 
       display:block;
       img{
@@ -109,9 +112,6 @@ padding-bottom:15px;
     margin:-10px auto -20px;
     padding:15px 5px;
   }
-  &.over-slider img {
-    max-width: 100px;
-  }
 }
 
 
@@ -128,6 +128,9 @@ padding-bottom:15px;
   border-radius: 4px;
   .box-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
   padding:10px;
+  .carousel-inner img{
+    .img-responsive();
+  }
   .carousel-indicators{
     background-color:black;
   }

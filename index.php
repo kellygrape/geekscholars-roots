@@ -5,12 +5,10 @@
   <?php get_search_form(); ?>
 <?php endif; ?>
 
-
-
 <section class="over-slider row">
-  <div class="col-md-3">
+  <div class="col-sm-4 col-md-3">
     <nav class="social-area">
-    	<ul class="clearfix">
+    	<ul class="nav nav-pills">
     	  <li class="facebook"><a href="https://www.facebook.com/geekscholars" class="tip" title="Visit us on Facebook"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/facebook.png" alt="Facebook"></a></li>
     	  <li class="twitter"><a href="https://twitter.com/GeekScholars" class="tip" title="Follow us on Twitter"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/twitter.png" alt="twitter"></a></li>
     	  <li class="itunes"><a href="https://itunes.apple.com/us/podcast/geekscholars-movie-news/id459567560" class="tip" title="Visit GeekScholars on iTunes"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/itunes.png" alt="Visit GeekScholars on iTunes"></a></li>
@@ -18,10 +16,10 @@
     	</ul>
     </nav>
   </div>
-  <div class="col-md-6 logo over-slider">
+  <div class="col-sm-4 col-md-6 logo over-slider">
 		<img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/geekscholarslogo.png" alt="Geek Scholars Logo">
 	</div>
-	<section class="homepage-search col-md-3">
+	<section class="homepage-search col-sm-4 col-md-3">
 		<?php get_search_form(); ?>
 	</section>
 </section>
