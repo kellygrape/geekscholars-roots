@@ -78,6 +78,7 @@ if(get_field('homepage_slider')):
     <div class="col-md-4">
         <figure class="post-image"><?php the_post_thumbnail() ?></figure>
         <h3><?php echo the_title(); ?></h3>
+        <?php if(get_field('segment')): ?>
         <?php while(has_sub_field('segment')): ?>
         <?php $term = get_term_by('id',get_sub_field('segment_type'),'segmenttax'); ?>
         <img class="segment-icon" data-toggle="tooltip" title="<?php the_sub_field('segment_description'); ?>" src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/icons/<?php echo($term->slug); ?>.png">
