@@ -24,6 +24,10 @@
 	</section>
 </section>
 
+
+
+
+<section class="frontpage-slider row">
 <?php
 // Show the most recent post in the podcast category, with its slider images as a carousel
 $args = array( 'category_name' => 'podcasts', 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC' );
@@ -44,8 +48,10 @@ foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 
 <?php endforeach; ?>
 <?php wp_reset_postdata();?>
+</section>
 
-<div class="row front-recent-podcasts">
+
+<section class="row front-recent-podcasts">
     <h2>Recent Podcasts</h2>
     <?php
     $myposts = get_posts(array( 'category_name' => 'podcasts', 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC', 'offset' => 1 ));
@@ -54,7 +60,7 @@ foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
     get_template_part('templates/homepage-podcast');
     
     endforeach; wp_reset_postdata();?>
-</div>
+</section>
 
 
 
