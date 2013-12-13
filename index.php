@@ -8,12 +8,18 @@
 <section class="over-slider row">
   <div class="col-sm-4 col-md-3">
     <nav class="social-area">
-    	<ul class="nav nav-pills">
-    	  <li class="facebook"><a href="https://www.facebook.com/geekscholars" class="tip" title="Visit us on Facebook"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/facebook.png" alt="Facebook"></a></li>
-    	  <li class="twitter"><a href="https://twitter.com/GeekScholars" class="tip" title="Follow us on Twitter"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/twitter.png" alt="twitter"></a></li>
-    	  <li class="itunes"><a href="https://itunes.apple.com/us/podcast/geekscholars-movie-news/id459567560" class="tip" title="Visit GeekScholars on iTunes"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/itunes.png" alt="Visit GeekScholars on iTunes"></a></li>
-    	  <li class="email"><a href="mailto:mail@geekscholars.com" class="tip" title="Email GeekScholars"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/email.png" alt="Email GeekScholars"></a></li>
-    	</ul>
+      <a href="https://www.facebook.com/geekscholars" title="Visit us on Facebook" class="btn">
+        <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/facebook.png" alt="Facebook">
+      </a>
+      <a href="https://twitter.com/GeekScholars" title="Follow us on Twitter" class="btn">
+        <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/twitter.png" alt="twitter">
+      </a>
+      <a href="https://itunes.apple.com/us/podcast/geekscholars-movie-news/id459567560" title="Visit GeekScholars on iTunes" class="btn">
+        <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/itunes.png" alt="Visit GeekScholars on iTunes">
+      </a>
+      <a href="mailto:mail@geekscholars.com" title="Email GeekScholars" class="btn">
+        <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/email.png" alt="Email GeekScholars">
+      </a>
     </nav>
   </div>
   <div class="col-sm-4 col-md-6 logo over-slider">
