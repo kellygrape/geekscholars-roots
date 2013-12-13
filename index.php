@@ -10,7 +10,7 @@
 <section class="over-slider clearfix">
 	<?php get_template_part('sitepart', 'social'); ?>
 	<div class="logo over-slider">
-		<img src="<?php echo get_bloginfo('template_url'); ?>/images/geekscholarslogo.png" alt="geekscholars%20-%20finalweb">
+		<img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/geekscholarslogo.png" alt="Geek Scholars Logo">
 	</div>
 	<section class="homepage-search clearfix">
 		<?php get_search_form(); ?>
