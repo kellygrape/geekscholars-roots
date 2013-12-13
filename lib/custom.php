@@ -30,3 +30,45 @@ function create_gsmn_segment_taxonomy2(){
       wp_insert_term( 'Thumbs Up or Thumbs Down', 'segmenttax', array('slug' => 'thumbsupthumbsdown','description'=> 'Change this description by visiting the Segments taxonomy.'));
   }
 }
+
+
+function gsmn_segmenticon($segmentslug){
+  switch ($segmentslug) {
+      case 'casting':
+          $gsmnicon = 'gsicon-casting';
+          break;
+      case 'eitheror':
+          $gsmnicon = 'gsicon-eitheror';
+          break;
+      case 'gsmnawards':
+          $gsmnicon = 'gsicon-oscar';
+          break;
+      case 'headlines':
+          $gsmnicon = 'gsicon-newspaper';
+          break;
+      case 'monthlypreview':
+          $gsmnicon = 'gsicon-monthly-preview';
+          break;
+      case 'moviereview':
+          $gsmnicon = 'gsicon-film-reel';
+          break;
+      case 'theodds':
+          $gsmnicon = 'gsicon-odds';
+          break;
+      case 'previewreview':
+          $gsmnicon = 'gsicon-film-clip';
+          break;
+      case 'thumbsupthumbsdown':
+          $gsmnicon = 'gsicon-thumbsup';
+          break;
+      case 'unsunghero':
+          $gsmnicon = 'gsicon-unsunghero';
+          break;
+      case 'wherearethey':
+          $gsmnicon = 'gsicon-wherenow';
+          break;
+      default:
+          $gsmnicon = 'gsicon-film-clip';
+    }
+  return $gsmnicon;
+}

@@ -10,14 +10,11 @@
 				<i class="glyphicon glyphicon-time"></i> <?php echo get_the_date(); ?>
 			</div>
 			<div class="col-sm-9 segment-list">
-				<?php if(get_field('segment')): ?>
-				<h3>Segments</h3>
-				<?php while(has_sub_field('segment')): ?>
-				<?php $term = get_term_by('id',get_sub_field('segment_type'),'segmenttax'); ?>
-				<img class="segment-icon" data-toggle="tooltip" title="<?php the_sub_field('segment_description'); ?>" src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/icons/<?php echo($term->slug); ?>.png">
-		 
-				<?php endwhile;endif; ?>
-			</div>
+        <?php if(get_field('segment')): ?>
+        <h3>Segments</h3>
+        <?php get_template_part('templates/podcast-segmentlist'); ?>
+        <?php endif; ?>
+    </div>
 		</div>
 	  </div>
 	</div>	 
