@@ -23,7 +23,7 @@ $args = array( 'category_name' => 'podcasts', 'posts_per_page' => 1, 'orderby' =
 
 $myposts = get_posts( $args );
 foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-    <?php get_template_part('templates-homepage/slider'); ?>
+    <?php get_template_part('templates/homepage-slider'); ?>
 
     <div class="col-sm-3 podcast-meta">
         <i class="glyphicon glyphicon-time"></i> <?php echo get_the_date(); ?>
@@ -31,7 +31,7 @@ foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
     <div class="col-sm-9 segment-list">
         <?php if(get_field('segment')): ?>
         <h3>Segments</h3>
-        <?php get_template_part('templates-podcast/segmentlist'); ?>
+        <?php get_template_part('templates/podcast-segmentlist'); ?>
         <?php endif; ?>
     </div>
 
@@ -44,7 +44,7 @@ foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
     $myposts = get_posts(array( 'category_name' => 'podcasts', 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC', 'offset' => 1 ));
     foreach ( $myposts as $post ) : setup_postdata( $post );
     
-    get_template_part('templates-homepage/podcast');
+    get_template_part('templates/homepage-podcast');
     
     endforeach; wp_reset_postdata();?>
 </div>
