@@ -23,12 +23,17 @@
   @var: "fa-var-@{icon}";
   &:before { content: @@var; }
 }
-
-i {
+.segment-icon-fa{
   .fa-mixin;
   .fa-mixin-lg;
-  .fa-mixin-icon(github);
+  .monthlypreview{
+    .fa-mixin-icon(calendar);
+  }
+  .headlines{
+    .fa-mixin-icon(bullhorn);
+  }
 }
+
 /* ==========================================================================
    Base
    ========================================================================== */
