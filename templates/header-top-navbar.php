@@ -1,5 +1,6 @@
 <header class="banner navbar navbar-default navbar-static-top" role="banner">
   <div class="container">
+    <?php if(!is_front_page()): ?><div class="navbar-logo"><a class="text-hide" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/geekscholarslogo.png" alt="Geek Scholars Logo" /></a></div><?php endif; ?>
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -8,7 +9,6 @@
         <span class="icon-bar"></span>
       </button>
       <span class="visible-xs navbar-brand">Menu</span>
-      <?php if(!is_front_page()): ?><div class="hidden-xs navbar-logo"><a class="text-hide" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/geekscholarslogo.png" alt="Geek Scholars Logo" /></a></div><?php endif; ?>
     </div>
 
     <nav class="collapse navbar-collapse" role="navigation">
