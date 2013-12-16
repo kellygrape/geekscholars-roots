@@ -41,11 +41,11 @@ $args = array( 'category_name' => 'podcasts', 'posts_per_page' => 1, 'orderby' =
 $myposts = get_posts( $args );
 foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
     <?php get_template_part('templates/homepage-slider'); ?>
-    <div class="col-md-4 col-sm-5 clearfix slider-meta">
+    <div class="col-sm-4 clearfix slider-meta">
       <div class="episode-number-area"><h3 class="episode-number"><?php the_field('episode_number'); ?></h3></div>
       <div class="episode-date"><i class="glyphicon glyphicon-time"></i> <?php echo get_the_date(); ?></div>
     </div>
-    <div class="col-md-8 col-sm-7 segment-list">
+    <div class="col-sm-8 segment-list">
       <?php if(get_field('segment')): ?>
       <h3>Segments</h3>
       <?php get_template_part('templates/podcast-segmentlist'); ?>

@@ -77,12 +77,12 @@ padding-bottom:15px;
     margin-top:80px;
   }
 }
+
 .homepage-search form{
   @media (min-width: @screen-sm-min) {
     margin-top:80px;
   }
 }
-
 
 .logo{ 
   header &{
@@ -126,9 +126,7 @@ padding-bottom:15px;
   }
 }
 
-
 .navbar-logo {
-  
   text-align:center;
   img {
     max-height: 110px;
@@ -146,6 +144,7 @@ padding-bottom:15px;
     }
   }
 }
+
 .navbar-nav {
   float:none;
   @media (min-width: @screen-md-min) { 
@@ -214,11 +213,10 @@ padding-bottom:15px;
   }
   h3.episode-number{border-right: none;}
   .episode-date{
-    .pull-left();
+    .pull-right();
     padding-right: 0;
-    @media (max-width: @screen-sm-min) { 
-      text-align:right;
-      
+    @media (min-width: @screen-sm-min) { 
+      .pull-left();
     }
   }
   margin-bottom:10px;
@@ -250,10 +248,17 @@ padding-bottom:15px;
    ========================================================================== */
 
 .content { }
+// Podcast - Single Page
+.single-podcast{
+  .podcast-header-image img{
+    .img-responsive();
+  }
+}
+
 
 
 // Segment List Page
-  .segment-listpage-item{
+.segment-listpage-item{
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
     margin: 10px 0;
@@ -266,11 +271,14 @@ padding-bottom:15px;
     }
 
   }
-  
 .btn-segmenticon{
   color:@text-color;
   padding: 0px 5px;
 }
+
+
+
+
 /* ==========================================================================
    Primary Content
    ========================================================================== */
