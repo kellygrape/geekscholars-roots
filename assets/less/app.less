@@ -207,11 +207,14 @@ padding-bottom:15px;
   }
 }
 .slider-meta{
-  .episode-number{
+  .episode-number-area{
     padding-left:0;
-    h3&{ border-right: none; }
+    .pull-left();
+    margin-right:10px;
   }
+  h3.episode-number{border-right: none;}
   .episode-date{
+    .pull-left();
     padding-right: 0;
     @media (max-width: @screen-sm-min) { 
       text-align:right;

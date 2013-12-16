@@ -42,8 +42,8 @@ $myposts = get_posts( $args );
 foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
     <?php get_template_part('templates/homepage-slider'); ?>
     <div class="col-md-4 col-sm-5 clearfix slider-meta">
-      <div class="col-xs-5 episode-number"><h3 class="episode-number"><?php the_field('episode_number'); ?></h3></div>
-      <div class="col-xs-7 episode-date"><i class="glyphicon glyphicon-time"></i> <?php echo get_the_date(); ?></div>
+      <div class="episode-number-area"><h3 class="episode-number"><?php the_field('episode_number'); ?></h3></div>
+      <div class="episode-date"><i class="glyphicon glyphicon-time"></i> <?php echo get_the_date(); ?></div>
     </div>
     <div class="col-md-8 col-sm-7 segment-list">
       <?php if(get_field('segment')): ?>
