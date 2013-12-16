@@ -8,8 +8,9 @@
         <span class="icon-bar"></span>
       </button>
       <span class="visible-xs navbar-brand">Menu</span>
-      <?php if(!is_front_page()): ?><a class="navbar-brand hidden-xs" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/geekscholarslogo.png" alt="Geek Scholars Logo">
-</a><?php endif; ?>
+      <div class="hidden-xs navbar-logo"><a class="text-hide" href="http://moviehawk.net/geekscholars/">Geek Scholars<img src="http://moviehawk.net/geekscholars/wp-content/themes/geekscholars-roots/assets/img/geekscholarslogo.png" alt="Geek Scholars Logo">
+        </a></div>
+      <?php if(!is_front_page()): ?><div class="hidden-xs navbar-logo"><a class="text-hide" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/geekscholarslogo.png" alt="Geek Scholars Logo" /></a></div><?php endif; ?>
     </div>
 
     <nav class="collapse navbar-collapse" role="navigation">
