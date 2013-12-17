@@ -25,8 +25,15 @@ previous_posts_link( 'Newer Entries' );
 ?>
     <?php the_content(); ?>
   </div>
-  <footer>
-    <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
+  <footer class="podcast-footer">
+    <nav class="social-area pull-right">
+    	<ul class="nav nav-pills">
+    	  <li class="facebook"><a href="https://www.facebook.com/geekscholars" class="tip" oldtitle="Visit us on Facebook" title="" data-hasqtip="true" aria-describedby="qtip-5"><img src="http://www.geekscholars.com/wp-content/themes/geekscholarstheme/images/facebook.png" alt="Facebook"></a></li>
+    	  <li class="twitter"><a href="https://twitter.com/GeekScholars" class="tip" oldtitle="Follow us on Twitter" title="" data-hasqtip="true" aria-describedby="qtip-6"><img src="http://www.geekscholars.com/wp-content/themes/geekscholarstheme/images/twitter.png" alt="twitter"></a></li>
+    	  <li class="itunes"><a href="https://itunes.apple.com/us/podcast/geekscholars-movie-news/id459567560" class="tip" oldtitle="Visit GeekScholars on iTunes" title="" data-hasqtip="true" aria-describedby="qtip-7"><img src="http://www.geekscholars.com/wp-content/themes/geekscholarstheme/images/itunes.png" alt="Visit GeekScholars on iTunes"></a></li>
+    	  <li class="email"><a href="mailto:mail@geekscholars.com" class="tip" oldtitle="Email GeekScholars" title="" data-hasqtip="true" aria-describedby="qtip-8"><img src="http://www.geekscholars.com/wp-content/themes/geekscholarstheme/images/email.png" alt="Email GeekScholars"></a></li>
+    	</ul>
+      </nav>
   </footer>
   <?php comments_template('/templates/comments.php'); ?>
 </article> 
