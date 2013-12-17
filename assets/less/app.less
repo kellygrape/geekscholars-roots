@@ -148,8 +148,15 @@ padding-bottom:15px;
 .navbar-nav {
   float:none;
   @media (min-width: @screen-md-min) { 
-    margin-top: 32px;
+    float:none;
+    margin: 32px auto 0;
+    display: table;
+    table-layout: fixed;
+    .home &{
+      margin-top: 0px;
+    }
   }
+
 }
 
 
