@@ -8,6 +8,9 @@ function gsroots_sidebar_on_front($sidebar) {
   if (is_category('podcasts')) {
     return true;
   }
+  if (is_tax('segmenttax')){
+    return true;
+  }
   return $sidebar;
 }
 
