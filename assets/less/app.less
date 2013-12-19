@@ -330,36 +330,37 @@ padding-bottom:15px;
       margin-bottom: 10px;
     }
   }
-  .movie-review-rating {
-    font-family: 'Francois One';
-    padding: 0;
-    text-align:center;
-    font-size:2em;
-    @ratingscolor: #7AC97A;
-    &.aplus, &.areg, &.aminus{
-      background-color: @ratingscolor;
-      color:white;
-    }
-    &.bplus, &.breg, &.bminus{
-      background-color: spin(@ratingscolor,-30);
-      color:white;
-    }
-    &.cplus, &.creg, &.cminus{
-      background-color: spin(@ratingscolor,-60);
-      color:white;
-    }
-    &.dplus, &.dreg, &.dminus{
-      background-color: spin(@ratingscolor,-90);
-      color:white;
-    }
-    &.freg, &.fminus{
-      background-color: spin(@ratingscolor,-120);
-      color:white;
-    }
-  }
+  
 }
 
-
+.movie-review-rating {
+  font-family: 'Francois One';
+  padding: 0;
+  text-align:center;
+  font-size:2em;
+  h2&{font-size: 1.75em;}
+  @ratingscolor: #7AC97A;
+  &.aplus, &.areg, &.aminus{
+    background-color: @ratingscolor;
+    color:white;
+  }
+  &.bplus, &.breg, &.bminus{
+    background-color: spin(@ratingscolor,-30);
+    color:white;
+  }
+  &.cplus, &.creg, &.cminus{
+    background-color: spin(@ratingscolor,-60);
+    color:white;
+  }
+  &.dplus, &.dreg, &.dminus{
+    background-color: spin(@ratingscolor,-90);
+    color:white;
+  }
+  &.freg, &.fminus{
+    background-color: spin(@ratingscolor,-120);
+    color:white;
+  }
+}
 
 
 /* ==========================================================================
