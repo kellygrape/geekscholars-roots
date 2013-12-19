@@ -24,12 +24,102 @@ function roots_widgets_init() {
 
   // Widgets
   register_widget('Roots_Vcard_Widget');
+  register_widget('GSMN_MovieReviews_FiveRecent');
 }
 add_action('widgets_init', 'roots_widgets_init');
 
+
+class GSMN_MovieReviews_FiveRecent extends WP_Widget {
+  private $fields = array(
+    'title'          => 'Title (optional)'
+  );
+  function __construct() {
+    $widget_ops = array('classname' => 'widget_gsmn_reviews_fiverecent', 'description' => __('This widget lists the five most recently reviewed movies and their ratings', 'gsmn'));
+
+    $this->WP_Widget('widget_gsmn_recent5reviews', __('GSMN: 5 Recent Reviews', 'gsmn'), $widget_ops);
+    $this->alt_option_name = 'widget_gsmn_recent5reviews';
+
+    add_action('save_post', array(&$this, 'flush_widget_cache'));
+    add_action('deleted_post', array(&$this, 'flush_widget_cache'));
+    add_action('switch_theme', array(&$this, 'flush_widget_cache'));
+  }
+  function widget($args, $instance) {
+    $cache = wp_cache_get('widget_gsmn_recent5reviews', 'widget');
+
+    if (!is_array($cache)) {
+      $cache = array();
+    }
+
+    if (!isset($args['widget_id'])) {
+      $args['widget_id'] = null;
+    }
+
+    if (isset($cache[$args['widget_id']])) {
+      echo $cache[$args['widget_id']];
+      return;
+    }
+
+    ob_start();
+    extract($args, EXTR_SKIP);
+
+    $title = apply_filters('widget_title', empty($instance['title']) ? __('Recently Reviewed', 'roots') : $instance['title'], $instance, $this->id_base);
+
+    echo $before_widget;
+
+    if ($title) {
+      echo $before_title, $title, $after_title;
+    }
+    // THIS IS THE ACTUAL PLACE WHERE THE WIDGET IS CREATED
+    global $post;
+    $args = array( 'category_name' => 'movie-reviews', 'posts_per_page' => 5, 'orderby' => 'date', 'order' => 'DESC' );
+    $myposts = get_posts( $args ); ?>
+    <ul class="recent5reviews">
+    <?php foreach( $myposts as $post ) :  setup_postdata($post); ?>
+    <li><a href="<?php the_permalink(); ?>" class="<?php the_field('movie_grade'); ?>"><span class="grade"><? echo getTheRating(get_field('movie_grade')); ?></span><?php the_title(); ?></a></li>
+	  <?php 
+	  endforeach; ?>
+    </ul>
+    <?php
+	  // AND THIS IS WHAT IS AFTER THE WIDGET
+    echo $after_widget;
+
+    $cache[$args['widget_id']] = ob_get_flush();
+    wp_cache_set('widget_gsmn_recent5reviews', $cache, 'widget');
+  }
+
+  function update($new_instance, $old_instance) {
+    $instance = array_map('strip_tags', $new_instance);
+
+    $this->flush_widget_cache();
+
+    $alloptions = wp_cache_get('alloptions', 'options');
+
+    if (isset($alloptions['widget_gsmn_recent5reviews'])) {
+      delete_option('widget_gsmn_recent5reviews');
+    }
+
+    return $instance;
+  }
+
+  function flush_widget_cache() {
+    wp_cache_delete('widget_gsmn_recent5reviews', 'widget');
+  }
+  function form($instance) {
+    foreach($this->fields as $name => $label) {
+      ${$name} = isset($instance[$name]) ? esc_attr($instance[$name]) : '';
+    ?>
+    <p>
+      <label for="<?php echo esc_attr($this->get_field_id($name)); ?>"><?php _e("{$label}:", 'roots'); ?></label>
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id($name)); ?>" name="<?php echo esc_attr($this->get_field_name($name)); ?>" type="text" value="<?php echo ${$name}; ?>">
+    </p>
+    <?php
+    }
+  }
+}
 /**
  * Example vCard widget
  */
+ 
 class Roots_Vcard_Widget extends WP_Widget {
   private $fields = array(
     'title'          => 'Title (optional)',

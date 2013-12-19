@@ -395,27 +395,47 @@ padding-bottom:15px;
   list-style: none;
   padding:0;
   margin:0;
+  li{
+    display:block;
+    border-bottom: 1px solid #DDD;
+    a, &.recentcomments{
+      display: block;
+      padding: 5px 10px;
+      background:transparent;
+      text-decoration:none;
+      -webkit-transition: color 250ms, background 200ms;
+      -moz-transition:    color 250ms, background 200ms;
+      -ms-transition:     color 250ms, background 200ms;
+      -o-transition:      color 250ms, background 200ms;
+      transition:         color 250ms, background 200ms;
+    }
+    a:hover{
+      background:#3FA9F5;
+      color:white;
+      text-shadow: 0 1px 0 #999;
+    }
+  }
 }
-.widget ul li{
-  display:block;
-  border-bottom: 1px solid #DDD;
+
+.recent5reviews{
+  @ratingscolor: #7AC97A;
+  .grade{
+    padding-left:10px;
+    .aplus &, .areg &, .aminus &{ color: @ratingscolor; }
+    .bplus &, .breg &, .bminus &{ color: spin(@ratingscolor,-30); }
+    .cplus &, .creg &, .cminus &{ color: spin(@ratingscolor,-60); }
+    .dplus &, .dreg &, .dminus &{ color: spin(@ratingscolor,-90); }
+    .fplus &, .freg &, .fminus &{ color: spin(@ratingscolor,-120); }
+  }
+  a:hover{                      
+     &.aplus, &.areg, &.aminus{ color:white !important; background-color: @ratingscolor; }
+     &.bplus, &.breg, &.bminus{ color:white !important; background-color: spin(@ratingscolor,-30); }
+     &.cplus, &.creg, &.cminus{ color:white !important; background-color: spin(@ratingscolor,-60); }
+     &.dplus, &.dreg, &.dminus{ color:white !important; background-color: spin(@ratingscolor,-90); }
+     &.fplus, &.freg, &.fminus{ color:white !important; background-color: spin(@ratingscolor,-120); }
+  }
 }
-.widget ul li a, .widget ul li.recentcomments{
-  display: block;
-  padding: 5px 10px;
-  background:transparent;
-  text-decoration:none;
-  -webkit-transition: color 250ms, background 200ms;
-  -moz-transition:    color 250ms, background 200ms;
-  -ms-transition:     color 250ms, background 200ms;
-  -o-transition:      color 250ms, background 200ms;
-  transition:         color 250ms, background 200ms;
-}
-.widget ul li a:hover{
-  background:#3FA9F5;
-  color:white;
-  text-shadow: 0 1px 0 #999;
-}
+
 
 /* ==========================================================================
    Posts
