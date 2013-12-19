@@ -81,21 +81,21 @@ function gsmn_segmenticon($segmentslug){
 function getTheRating($rating){
   $returnv = "";
   switch ($rating) {
-    case 'aplus': $retrunv = 'A+';break;
-    case 'areg': $retrunv = 'A';break;  
-    case 'aminus': $retrunv = 'A-';break;
-    case 'bplus': $retrunv = 'B+';break;
-    case 'breg': $retrunv = 'B';break;  
-    case 'bminus': $retrunv = 'B-';break;
-    case 'cplus': $retrunv = 'C+';break;
-    case 'creg': $retrunv = 'C';break;  
-    case 'cminus': $retrunv = 'C-';break;
-    case 'dplus': $retrunv = 'D+';break;
-    case 'dreg': $retrunv = 'D';break;  
-    case 'dminus': $retrunv = 'D-';break;
-    case 'freg': $retrunv = 'F';break;  
-    case 'fminus': $retrunv = 'F-';break;
-    default: $retrunv = 'NR';break;
+    case 'aplus': $returnv = 'A+';break;
+    case 'areg': $returnv = 'A';break;  
+    case 'aminus': $returnv = 'A-';break;
+    case 'bplus': $returnv = 'B+';break;
+    case 'breg': $returnv = 'B';break;  
+    case 'bminus': $returnv = 'B-';break;
+    case 'cplus': $returnv = 'C+';break;
+    case 'creg': $returnv = 'C';break;  
+    case 'cminus': $returnv = 'C-';break;
+    case 'dplus': $returnv = 'D+';break;
+    case 'dreg': $returnv = 'D';break;  
+    case 'dminus': $returnv = 'D-';break;
+    case 'freg': $returnv = 'F';break;  
+    case 'fminus': $returnv = 'F-';break;
+    default: $returnv = 'NR';break;
   }
   return $returnv;
 }
