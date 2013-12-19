@@ -331,23 +331,46 @@ padding-bottom:15px;
     font-family: 'Francois One';
     padding: 5px;
     margin: 5px 0;
+    text-align:center;
+    font-size:2em;
     &.aplus, &.areg, &.aminus{
-      background-color: #7AC97A;
+      background-color: @c-spin50;
+      color:white;
     }
     &.bplus, &.breg, &.bminus{
-      
+      background-color: @c-spin100;
+      color:white;
     }
     &.cplus, &.creg, &.cminus{
-      background-color: #dfd440;
+      background-color: @c-spin150;
+      color:white;
     }
     &.dplus, &.dreg, &.dminus{
-      
+      background-color: @c-spin200;
+      color:white;
     }
     &.freg, &.fminus{
-      
+      background-color: @c-spin250;
+      color:white;
     }
   }
 }
+@c: rgb(58, 155, 255);
+
+@c-dark-1: darken(@c, 10%);
+@c-dark-2: darken(@c, 20%);
+@c-light-1: lighten(@c, 10%);
+@c-light-2: lighten(@c, 20%);
+
+
+@c-spin50: spin(@c, 50);
+@c-spin100: spin(@c, 100);
+@c-spin150: spin(@c, 150);
+@c-spin200: spin(@c, 200);
+@c-spin250: spin(@c, 250);
+@c-spin300: spin(@c, 300);
+@c-spin350: spin(@c, 350);
+
 
 
 
