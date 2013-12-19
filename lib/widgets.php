@@ -312,3 +312,83 @@ class SegmentsListWidget extends WP_Widget {
 }
 
 
+
+// WIDGET
+add_action( 'widgets_init', 'ratings_list_widget' );
+function ratings_list_widget() {
+	register_widget( 'GSMNRatingsListWidget' );
+}
+
+class GSMNRatingsListWidget extends WP_Widget {
+
+	function GSMNRatingsListWidget() {
+		$widget_ops = array( 'classname' => 'ratings-list-widget', 'description' => __('A widget that displays a list of all the ratings ', 'ratings-list-widget') );
+		
+		$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'ratings-list-widget' );
+		
+		$this->WP_Widget( 'ratings-list-widget', __('GSMN : Ratings List Widget', 'ratings-list-widget'), $widget_ops, $control_ops );
+	}
+	
+	function widget( $args, $instance ) {
+		extract( $args );
+
+		//Our variables from the widget settings.
+		$title = apply_filters('widget_title', $instance['title'] );
+		$name = $instance['name'];
+		$show_info = isset( $instance['show_info'] ) ? $instance['show_info'] : false;
+
+		echo $before_widget;
+
+		// Display the widget title 
+		if ( $title )
+			echo $before_title . $title . $after_title;
+			
+		echo('<ul class="ratings-widget-list">');	
+		
+		//Display the segments
+    $ratings = get_terms('ratingstax');
+    foreach($ratings as $rating) {
+      $link = get_term_link(intval($rating->term_id),'ratingstax');
+      ?>
+          <li>
+          <a href="<?php echo($link); ?>">
+          <?php echo($rating->name); ?>
+          </a>
+          </li>
+      <?php
+    }
+    echo('</ul>');
+		echo $after_widget;
+	}
+
+	//Update the widget 
+	 
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+
+		//Strip tags from title and name to remove HTML 
+		$instance['title'] = strip_tags( $new_instance['title'] );
+		$instance['name'] = strip_tags( $new_instance['name'] );
+		$instance['show_info'] = $new_instance['show_info'];
+
+		return $instance;
+	}
+
+	
+	function form( $instance ) {
+
+		//Set up some default widget settings.
+		$defaults = array( 'title' => __('', 'ratings-list') );
+		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'ratings-list'); ?></label>
+			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" style="width:100%;" />
+		</p>
+		<p>This widget will show a list of all the segments that you have created, and their icons.  No further customization is needed.</p>
+
+		
+<?php
+	}
+}
+
