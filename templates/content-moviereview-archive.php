@@ -5,7 +5,7 @@
   <section class="movie-review-snippet col-md-9">
     <header class="clearfix">
       <div class="movie-review-rating pull-left">
-        <span class="rating-letter"><?php the_sub_field('movie_grade'); ?></span>
+        <span class="rating-letter <?php the_field('movie_grade'); ?>"><?php echo getTheRating(get_field('movie_grade')); ?></span>
       </div>
       <div class="header-text pull-right">
         <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>

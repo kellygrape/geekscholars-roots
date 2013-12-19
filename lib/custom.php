@@ -75,3 +75,27 @@ function gsmn_segmenticon($segmentslug){
     }
   return $gsmnicon;
 }
+
+
+
+function getTheRating($rating){
+  $returnv = "";
+  switch ($rating) {
+    case 'aplus': $retrunv = 'A+';break;
+    case 'areg': $retrunv = 'A';break;  
+    case 'aminus': $retrunv = 'A-';break;
+    case 'bplus': $retrunv = 'B+';break;
+    case 'breg': $retrunv = 'B';break;  
+    case 'bminus': $retrunv = 'B-';break;
+    case 'cplus': $retrunv = 'C+';break;
+    case 'creg': $retrunv = 'C';break;  
+    case 'cminus': $retrunv = 'C-';break;
+    case 'dplus': $retrunv = 'D+';break;
+    case 'dreg': $retrunv = 'D';break;  
+    case 'dminus': $retrunv = 'D-';break;
+    case 'freg': $retrunv = 'F';break;  
+    case 'fminus': $retrunv = 'F-';break;
+    default: $retrunv = 'NR';break;
+  }
+  return $returnv;
+}
