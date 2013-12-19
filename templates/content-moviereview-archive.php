@@ -3,7 +3,7 @@
     <?php the_post_thumbnail('movie-poster'); ?>
   </figure>
   <section class="movie-review-snippet col-md-9">
-    <header class="row">
+    <header class="clearfix">
       <div class="movie-review-rating col-sm-1 <?php the_field('movie_grade'); ?>">
         <span class="rating-letter"><?php echo getTheRating(get_field('movie_grade')); ?></span>
       </div>

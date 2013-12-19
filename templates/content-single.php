@@ -1,6 +1,8 @@
 <?php while (have_posts()) : the_post(); ?>
 	<?php if(in_category('podcasts')): ?>
 		<?php get_template_part('templates/content-single-podcast'); ?>
+	<?php elseif(in_category('movie-review')): ?>
+		<?php get_template_part('templates/content-single-moviereview'); ?>
 	<?php else: ?>
   <article <?php post_class(); ?>>
     <header>
