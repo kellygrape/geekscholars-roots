@@ -10,7 +10,12 @@ var geekScholarsSite = {
     finalize: function() { 
       $('[data-toggle="tooltip"]').tooltip({'placement': 'bottom'});
       $('.carousel').carousel();
-    	console.log('test');
+    	$('.movie-review-snippet').each(function(){
+        theMovieTitleHeight = $(this).find('.header-text').height();
+        $(this).find('.movie-review-rating').css('height',theMovieTitleHeight);
+        $(this).find('.movie-review-rating').css('width',theMovieTitleHeight);
+        $(this).find('.movie-review-rating').css('line-height',theMovieTitleHeight+'px');
+      });
     }
   },
   // Home page

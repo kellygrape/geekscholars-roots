@@ -3,11 +3,11 @@
     <?php the_post_thumbnail('movie-poster'); ?>
   </figure>
   <section class="movie-review-snippet col-md-9">
-    <header class="clearfix">
-      <div class="movie-review-rating pull-left">
-        <span class="rating-letter <?php the_field('movie_grade'); ?>"><?php echo getTheRating(get_field('movie_grade')); ?></span>
+    <header class="row">
+      <div class="movie-review-rating col-sm-1 <?php the_field('movie_grade'); ?>">
+        <span class="rating-letter"><?php echo getTheRating(get_field('movie_grade')); ?></span>
       </div>
-      <div class="header-text pull-right">
+      <div class="header-text col-sm-11">
         <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
         <?php get_template_part('templates/entry-meta'); ?>
       </div>
