@@ -419,14 +419,12 @@ padding-bottom:15px;
 
 .recent5reviews{
   @ratingscolor: #7AC97A;
-  .grade{
-    padding-left:10px;
-    .aplus &, .areg &, .aminus &{ color: @ratingscolor; }
-    .bplus &, .breg &, .bminus &{ color: spin(@ratingscolor,-30); }
-    .cplus &, .creg &, .cminus &{ color: spin(@ratingscolor,-60); }
-    .dplus &, .dreg &, .dminus &{ color: spin(@ratingscolor,-90); }
-    .fplus &, .freg &, .fminus &{ color: spin(@ratingscolor,-120); }
-  }
+  .grade{ padding-right:10px; }
+  .aplus, .areg, .aminus{ .grade{ color: @ratingscolor; }}
+  .bplus, .breg, .bminus{ .grade{ color: spin(@ratingscolor,-30); }}
+  .cplus, .creg, .cminus{ .grade{ color: spin(@ratingscolor,-60); }}
+  .dplus, .dreg, .dminus{ .grade{ color: spin(@ratingscolor,-90); }}
+  .fplus, .freg, .fminus{ .grade{ color: spin(@ratingscolor,-120); }}
   a:hover{                      
      &.aplus, &.areg, &.aminus{ color:white !important; background-color: @ratingscolor; }
      &.bplus, &.breg, &.bminus{ color:white !important; background-color: spin(@ratingscolor,-30); }
