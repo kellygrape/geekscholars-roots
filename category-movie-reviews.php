@@ -8,7 +8,6 @@
 <?php endif; ?>
 
 <?php while (have_posts()) : the_post(); ?>
-  <h3>This is a movie review</h3>
   <?php get_template_part('templates/content', 'moviereview-archive'); ?>
 <?php endwhile; ?>
 
