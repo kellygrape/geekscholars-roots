@@ -1,3 +1,6 @@
+<div class="page-header">
+  <h1>Movie Reviews</h1>
+</div>
   <article <?php post_class('row'); ?>>
     <figure class="movie-review-poster col-md-3">
       <?php the_post_thumbnail('movie-poster'); ?>
