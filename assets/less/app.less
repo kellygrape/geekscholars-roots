@@ -3,94 +3,255 @@
  */
 
 @import "bootstrap/bootstrap.less";
+@import "../fonts/gsmnfont.css";
 
-@brand-color: #b30838;
 /* ==========================================================================
    Base
    ========================================================================== */
-body{
-  background: #FFF url(../img/131208snow-012-edit.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  background-size: cover;
-}
 
-.wow-posts .row{
-  @media (min-width: @screen-sm-min) {margin-bottom:10px;}
-}
-.wow-posts article{
-  @media (max-width: @screen-sm-min) { margin-bottom:10px; }
-  .openmark,.closemark{
-    margin:0;
-    padding:3px 10px;
-    color:white;
-  }
-  .openmark{
-    background-color:@brand-success;
-  }
-  .closemark{
-    background-color:@brand-warning;
-  }
-}
-.wow-posts article header{
-  background-color:white;
-  padding:10px;
-  h2{
-    margin:0;
-  } 
-}
+body { }
 
-.wow-posts article.wow-closed{
-  opacity:.5;
-  &:hover{
-    opacity:1;
-  }
-}
-h1, h2, h3, .navbar-brand{
-  font-family:"FrutigerLTW01-67BoldCn";
-}
 
-.widget ul {
-  list-style: none;
-  padding:0;
-    
+@import url(http://fonts.googleapis.com/css?family=Francois+One);
+h1{
+	font-size: 2em;
 }
-.widget li{
-  padding:3px 10px;
-  border-bottom: 1px solid #eee;
-  background-color: white;
+h2{
+	font-size: 1.5em; 
 }
-.widget li:hover{
-    background-color: #FFF7E7;
-    opacity: 1;
+h3{
+	font-size: 1.25em;
 }
-.widget h3{
-  margin: 0;
-  padding: 10px 5px;
-  color: hsl(0, 100%, 100%);
-  text-shadow: 3px 2px 5px hsl(0, 0%, 20%);
-  font-size: 2em;
+article.podcast-archive{
+margin-bottom:15px;
+border-bottom: 1px solid #ccc;
+padding-bottom:15px;
 }
-
+.segment-list h3, .podcast-meta i{
+	color: #D00;
+}
+.episode-number{
+	font-family: 'Francois One';
+	border-right: 3px solid;
+	padding-right: 10px;
+	color: #666;
+}
+.segment-list h3{
+	display:inline-block;
+	font-family: 'Francois One';
+	margin: 0 10px 0 0;
+	font-size: 1em;
+}
+.episodenumber {
+	margin-right: 15px;
+	margin-top: 15px;
+	float: left;
+	background: #999;
+	border-radius: 100%;
+	box-shadow: 1px 1px 1px #444;
+	color: #FFF;
+	font-size: 15px;
+	padding: 10px;
+	text-align: center;
+}
 /* ==========================================================================
    Header
    ========================================================================== */
 
-.banner { 
-  font-size: 3em;
-  background-color:#A60835;
-  a{
-    color:white;
+.banner {
+  &.navbar{
+    border-bottom: 10px solid darken(@brand-primary, 15%);
+    a{
+      font-family: @latofont;
+    }
   }
 }
-.sju-banner {
-  background-color: white;
-  border-bottom: 4px solid #A60835; border-top: 8px solid #DDD;
+
+.social-area{
+  text-align: center;
+  img{
+    width: 24px;
+    height: 24px;
+  }
+  @media (min-width: @screen-sm-min) {
+    margin-top:80px;
+    .podcast-footer &{
+      margin-top:0;
+    }
+  }
 }
-.sju-banner .logo img {
-  max-width: 200px;
-  height: auto;
-  margin-top: -27px;
-  margin-bottom: 2px;
+
+
+.homepage-search form{
+  @media (min-width: @screen-sm-min) {
+    margin-top:80px;
+  }
+}
+
+.logo{ 
+  header &{
+    width:50%;
+  }
+  &.over-slider{ 
+    display:none;
+    img{
+      max-width: 100px;
+    }
+    @media (min-width: @screen-sm-min) { 
+      display:block;
+      img{
+        max-width: 150px;
+        margin: 0 auto -70px;
+        -webkit-border-radius: 40px 40px 100% 100%;
+        -moz-border-radius: 40px 40px 100% 100%;
+        border-radius: 40px 40px 100% 100%;
+        padding-bottom: 12px;
+      }   
+    }
+    @media (min-width: @screen-sm-min) { 
+      img{
+        max-width: 200px;
+      }   
+    }
+  }
+  margin: 5px auto;
+  text-align: center;
+  position: relative;
+  z-index: 450;
+  background-color: transparent;
+  padding: 0 0 10px;
+  img{
+    background: white;
+    max-width:100%;
+    height:auto;
+    border-radius: 100%;
+    margin:-10px auto -20px;
+    padding:15px 5px;
+  }
+}
+
+.navbar-logo {
+  text-align:center;
+  img {
+    max-height: 110px;
+    width: auto;
+    background: #FFF; 
+    border-radius: 100%; 
+    margin: 0; 
+    padding: 12px 5px; 
+    margin-bottom: -30px;
+  }
+  @media (min-width: @screen-sm-min) { 
+    float: left;
+    .home &{
+      display:none;
+    }
+  }
+}
+
+.navbar-nav {
+  float:none;
+  @media (min-width: @screen-md-min) { 
+    float:none;
+    margin: 32px auto 0;
+    display: table;
+    table-layout: fixed;
+    .home &{
+      margin-top: 0px;
+    }
+  }
+
+}
+
+
+
+
+/* ==========================================================================
+   Styles for the Home Page
+   ========================================================================== */
+
+//Carousel
+#podcast-slider{
+  border-radius: 4px;
+  .box-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+  padding:10px;
+  margin-bottom:20px;
+  padding-bottom: 20px;
+  .carousel-inner img{
+    .img-responsive();
+  }
+  .carousel-indicators{
+    bottom: -10px;
+    li.active{
+      background-color: #333;
+    }
+    li{
+      border-color: #333;
+    }
+  }
+  .box-caption{
+    position: relative;
+    bottom: 0;
+    margin-bottom: 4%;
+    z-index: 50;
+    padding: 12px;
+    color: #FFF;
+    background: #000;
+    @media (min-width: @screen-sm-min) { 
+      border-radius: 5px 0 0 5px;
+      opacity: 0.8;
+      max-width: 90%;
+      height: 6%;
+      margin-top: -10%;
+      float: right;
+    }
+  }
+}
+.frontpage-slider{
+  padding:15px;
+  @media (min-width: @screen-sm-min) { 
+    padding:0;
+  }
+  .episode-number{
+    margin:0;
+  }
+}
+.slider-meta{
+  .episode-number-area{
+    padding-left:0;
+    .pull-left();
+    margin-right:10px;
+  }
+  h3.episode-number{border-right: none;}
+  .episode-date{
+    .pull-right();
+    padding-right: 0;
+    @media (min-width: @screen-sm-min) { 
+      .pull-left();
+    }
+  }
+  margin-bottom:10px;
+}
+// Front Recent Podcasts (three list)
+.front-recent-podcasts{
+  margin-top:40px;
+  h2.prevepisodes{
+    text-align: center;
+    .text-hide();
+    background: url(../img/previousepisodes2.png) no-repeat center center;
+    height: 25px;
+  }
+  img{
+    .img-responsive();
+  }
+  .col-md-4 {
+    padding: 10px;
+    article {
+      box-shadow: 0 0 10px #ccc;
+      padding: 10px;
+    }
+  }
+
 }
 
 /* ==========================================================================
@@ -99,34 +260,51 @@ h1, h2, h3, .navbar-brand{
 
 .content { }
 
+.page-header h1{
+	font-family: 'Francois One';
+	color: #D00;
+}
 
-.single .post {
-  background-color: white;
-  padding: 10px;
-  .currently-open{
-    color:green;
+// Podcast - Single Page
+.single-podcast{
+  .podcast-header-image img{
+    .img-responsive();
   }
-  .currently-closed{
-    color:gray;
+  .episode-title{
+    font-family: 'Francois One';
+    color: #D00;
   }
-  h1{
-    color: #B30838;
-    border-bottom: 1px solid;
-    padding-bottom: 10px;
-    margin-top: 10px;
+}
+.podcast-footer{
+  background-color:#eee;
+}
+
+
+// Segment List Page
+.segment-listpage-item{
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    margin: 10px 0;
+    .segment-icon-fa{
+      font-size:2em;
+    }
+    h2{
+      margin-top:0;
+      font-weight:bold;
+    }
+
   }
-  
+.btn-segmenticon{
+  color:@text-color;
+  padding: 0px 1px;
 }
-.closed-hours, .open-hours{
-  display:block;
+.tooltip{
+  position:fixed;
+  z-index:5000;
 }
-.closed-hours .closed-title, .open-hours .open-title{
-  font-weight:bold;
-  padding-right: 10px;
-}
-.istoday{
-  font-weight:bold;
-}
+
+
+
 
 /* ==========================================================================
    Primary Content
@@ -143,9 +321,45 @@ h1, h2, h3, .navbar-brand{
    Sidebar
    ========================================================================== */
 
-.sidebar { }
+.sidebar { 
 
-
+}
+.widget h3{
+  text-transform: uppercase;
+  font-size: 1.25em;
+	font-family: 'Francois One';
+	color: #D00;
+}
+/* Widgets */
+.widgettitle{
+  font-size:14px;
+  text-transform: uppercase;
+}
+.widget ul{
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+.widget ul li{
+  display:block;
+  border-bottom: 1px solid #DDD;
+}
+.widget ul li a, .widget ul li.recentcomments{
+  display: block;
+  padding: 5px 10px;
+  background:transparent;
+  text-decoration:none;
+  -webkit-transition: color 250ms, background 200ms;
+  -moz-transition:    color 250ms, background 200ms;
+  -ms-transition:     color 250ms, background 200ms;
+  -o-transition:      color 250ms, background 200ms;
+  transition:         color 250ms, background 200ms;
+}
+.widget ul li a:hover{
+  background:#3FA9F5;
+  color:white;
+  text-shadow: 0 1px 0 #999;
+}
 
 /* ==========================================================================
    Posts
@@ -154,7 +368,11 @@ h1, h2, h3, .navbar-brand{
 .hentry header { }
 .hentry time { }
 .hentry .byline { }
-.hentry .entry-content { }
+.hentry .entry-content { 
+  img{
+    .img-responsive();
+  }
+}
 .hentry footer { }
 
 
@@ -163,7 +381,11 @@ h1, h2, h3, .navbar-brand{
    Footer
    ========================================================================== */
 
-.content-info { }
+.content-info {
+  background-color: @brand-primary;
+  border-top:10px solid darken(@brand-primary, 15%);
+  text-align: center;
+}
 
 
 
@@ -178,37 +400,19 @@ h1, h2, h3, .navbar-brand{
 figure.alignnone { margin-left: 0; margin-right: 0; }
 
 
-/*
-This CSS resource incorporates links to font software which is
-the valuable copyrighted property of Monotype Imaging and/or
-its suppliers. You may not attempt to copy, install, redistribute, convert,
-modify or reverse engineer this font software. Please contact Monotype Imaging
-with any questions regarding Web Fonts:	http://webfonts.fonts.com
-@import url("http://fast.fonts.com/t/1.css?apiType=css&projectid=60cec3a4-12ff-4d0d-9a57-d7db74cdafc9");
-^ removed the above line on 11/2/12.  It doesn't appear to point to anything.
-*/
 
-// the ../fonts/ should be for wherever the fonts directory lives relative to the compiled file.
-@font-face {
-  font-family: 'FrutigerLTW01-67BoldCn';
-  src: url('../fonts/frutigerltw01-67boldcn.eot?') format('eot'), 
-       url('../fonts/frutigerltw01-67boldcn.woff') format('woff'), 
-       url('../fonts/frutigerltw01-67boldcn.ttf') format('truetype'), 
-       url('../fonts/frutigerltw01-67boldcn.svg') format('svg');
-}
-@font-face {
-  font-family: 'FrutigerLTW01-75Black';
-  src: url('../fonts/frutigerltw01-75black.eot?') format('eot'), 
-       url('../fonts/frutigerltw01-75black.woff') format('woff'), 
-       url('../fonts/frutigerltw01-75black.ttf') format('truetype'), 
-       url('../fonts/frutigerltw01-75black.svg') format('svg');
-}
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
-@media (min-width: @screen-sm-min) { }
+@media (min-width: @screen-sm-min) { 
+  .sidebar{
+    margin-top: 100px;
+  }
+}
 
-@media (min-width: @screen-md-min) { }
+@media (min-width: @screen-md-min) { 
+  
+}
 
 @media (min-width: @screen-lg-min) { }
