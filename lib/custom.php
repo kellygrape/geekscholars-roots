@@ -14,6 +14,31 @@ function gsroots_sidebar_on_front($sidebar) {
   return $sidebar;
 }
 
+add_action( 'init', 'create_gsmn_movie_ratings_tax', 0 );
+function create_gsmn_movie_ratings_tax(){
+  if (!taxonomy_exists('ratingstax')) {
+      register_taxonomy( 'ratingstax', 'post', array( 'hierarchical' => true, 'label' => __('Ratings'), 'query_var' => 'movierating', 'rewrite' => array( 'slug' => 'movierating' ) ) );
+      wp_insert_term( 'A+', 'ratingstax', array('slug' => 'aplus'));
+      wp_insert_term( 'A', 'ratingstax', array('slug' => 'areg'));
+      wp_insert_term( 'A-', 'ratingstax', array('slug' => 'aminus'));
+      wp_insert_term( 'B+', 'ratingstax', array('slug' => 'bplus'));
+      wp_insert_term( 'B', 'ratingstax', array('slug' => 'breg'));
+      wp_insert_term( 'B-', 'ratingstax', array('slug' => 'bminus'));
+      wp_insert_term( 'C+', 'ratingstax', array('slug' => 'cplus'));
+      wp_insert_term( 'C', 'ratingstax', array('slug' => 'creg'));
+      wp_insert_term( 'C-', 'ratingstax', array('slug' => 'cminus'));
+      wp_insert_term( 'D+', 'ratingstax', array('slug' => 'dplus'));
+      wp_insert_term( 'D', 'ratingstax', array('slug' => 'dreg'));
+      wp_insert_term( 'D-', 'ratingstax', array('slug' => 'dminus'));
+      wp_insert_term( 'F+', 'ratingstax', array('slug' => 'fplus'));
+      wp_insert_term( 'F', 'ratingstax', array('slug' => 'freg'));
+      wp_insert_term( 'F-', 'ratingstax', array('slug' => 'fminus'));
+  }
+}
+
+
+
+
 add_action( 'init', 'create_gsmn_segment_taxonomy2', 0 );
 function create_gsmn_segment_taxonomy2(){
   if (!taxonomy_exists('segmenttax')) {
