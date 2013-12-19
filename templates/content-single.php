@@ -2,7 +2,7 @@
 	<?php if(in_category('podcasts')): ?>
 		<?php get_template_part('templates/content-single-podcast'); ?>
 	<?php elseif(in_category('movie-reviews')): ?>
-		<?php get_template_part('templates/content-single-moviereview'); ?>
+		<?php get_template_part('templates/content-single-moviereviews'); ?>
 	<?php else: ?>
   <article <?php post_class(); ?>>
     <header>
