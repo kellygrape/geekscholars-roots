@@ -37,4 +37,26 @@ if(get_field('homepage_slider')):
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div>
+<?php else:
+  $v = 0;
+
+ // if there is no slider images, show the featured image ?>
+<div id="podcast-slider" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="slider-image">
+        <a href="<?php echo get_permalink();?>"><?php the_post_thumbnail('headerimage'); ?></a>
+      </div>
+    </div>
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#podcast-slider" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#podcast-slider" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
 <?php endif; //if get_field homepageslider ?>

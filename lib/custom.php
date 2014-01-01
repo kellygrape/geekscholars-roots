@@ -2,6 +2,22 @@
 /**
  * Custom functions
  */
+ 
+ 
+// AUDIO SHORTCODE
+function html5_audio($atts, $content = null) {
+    extract(shortcode_atts(array(
+        "src" => '',
+        "autoplay" => '',
+        "preload"=> 'true',
+        "loop" => '',
+        "controls"=> ''
+    ), $atts));
+    return '<audio src="'.$src.'" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4000)" preload="'.$preload.'" loop="'.$loop.'" controls="'.$controls.'" autobuffer></audio>';
+}
+add_shortcode('audio5', 'html5_audio');
+
+
  add_filter('roots_display_sidebar', 'gsroots_sidebar_on_front');
 
 function gsroots_sidebar_on_front($sidebar) {  

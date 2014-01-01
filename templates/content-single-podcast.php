@@ -19,10 +19,20 @@
   </header>
   <div class="entry-content">
   <?php
-// usage with max_num_pages
-next_posts_link( 'Older Entries', $the_query->max_num_pages );
-previous_posts_link( 'Newer Entries' );
-?>
+  // usage with max_num_pages
+  next_posts_link( 'Older Entries', $the_query->max_num_pages );
+  previous_posts_link( 'Newer Entries' );
+  ?>
+  <center><?php
+      $EpisodeData = powerpress_get_enclosure_data($post->ID, $feed_slug);
+      if( !$EpisodeData['url'] ){
+      }
+      else{
+        echo do_shortcode('[audio5 src="'.$EpisodeData['url'].'" autoplay="autoplay"]');
+      }
+
+    ?>
+    </center>
     <?php the_content(); ?>
   </div>
   <footer class="podcast-footer">

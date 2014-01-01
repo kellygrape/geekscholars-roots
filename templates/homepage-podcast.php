@@ -1,6 +1,6 @@
 <div class="col-md-4">
   <article <?php post_class('homepage-podcast'); ?>>
-    <figure class="post-image"><?php the_post_thumbnail() ?></figure>
+    <figure class="post-image"><?php the_post_thumbnail('medium') ?></figure>
   	<div class="media podcast-header">
   	  <h2 class="pull-left episode-number">
   		<?php the_field('episode_number'); ?>
