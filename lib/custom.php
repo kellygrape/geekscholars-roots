@@ -3,7 +3,12 @@
  * Custom functions
  */
  
- 
+function remove_more_link_scroll( $link ) {
+	$link = preg_replace( '|#more-[0-9]+|', '', $link );
+	return $link;
+}
+add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
+
 // AUDIO SHORTCODE
 function html5_audio($atts, $content = null) {
     extract(shortcode_atts(array(
