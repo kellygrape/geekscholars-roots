@@ -23,9 +23,9 @@ h3{
 	font-size: 1.25em;
 }
 article.podcast-archive{
-margin-bottom:15px;
-border-bottom: 1px solid #ccc;
-padding-bottom:15px;
+  margin-bottom:15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom:15px;
 }
 .segment-list h3, .podcast-meta i{
 	color: #D00;
@@ -333,33 +333,41 @@ padding-bottom:15px;
   
 }
 
+@a-rating: @brand-success;
+@b-rating: #E0BB03;
+@c-rating: spin(@brand-warning,17);
+@d-rating: @brand-warning;
+@f-rating: @brand-danger;
 .movie-review-rating {
   font-family: 'Francois One';
   padding: 0;
   text-align:center;
   font-size:2em;
   h2&{font-size: 1.75em;}
-  @ratingscolor: #7AC97A;
-  &.aplus, &.areg, &.aminus{
-    background-color: @ratingscolor;
+  &.aplus, &.areg, &.aminus,
+  &.bplus, &.breg, &.bminus,
+  &.cplus, &.creg, &.cminus,
+  &.dplus, &.dreg, &.dminus,
+  &.fplus, &.freg, &.fminus{
     color:white;
   }
-  &.bplus, &.breg, &.bminus{
-    background-color: spin(@ratingscolor,-30);
-    color:white;
-  }
-  &.cplus, &.creg, &.cminus{
-    background-color: spin(@ratingscolor,-60);
-    color:white;
-  }
-  &.dplus, &.dreg, &.dminus{
-    background-color: spin(@ratingscolor,-90);
-    color:white;
-  }
-  &.freg, &.fminus{
-    background-color: spin(@ratingscolor,-120);
-    color:white;
-  }
+  &.aplus{  background-color: darken(@a-rating, 10%); }
+  &.bplus{  background-color: darken(@b-rating, 10%); }
+  &.cplus{  background-color: darken(@c-rating, 10%); }
+  &.dplus{  background-color: darken(@d-rating, 10%); }
+  &.fplus{  background-color: darken(@f-rating, 10%); }
+    
+  &.areg{   background-color: @a-rating;  }
+  &.breg{   background-color: @b-rating;  }
+  &.creg{   background-color: @c-rating;  }
+  &.dreg{   background-color: @d-rating;  }
+  &.freg{   background-color: @f-rating;  }
+  
+  &.aminus{ background-color: lighten(@a-rating, 15%); }
+  &.bminus{ background-color: lighten(@b-rating, 15%); }
+  &.cminus{ background-color: lighten(@c-rating, 15%); }
+  &.dminus{ background-color: lighten(@d-rating, 15%); }
+  &.fminus{ background-color: lighten(@f-rating, 15%); }
 }
 
 
@@ -419,19 +427,38 @@ padding-bottom:15px;
 }
 
 .recent5reviews{
-  @ratingscolor: #7AC97A;
   .grade{ padding-right:10px; }
-  .aplus, .areg, .aminus{ .grade{ color: @ratingscolor; }}
-  .bplus, .breg, .bminus{ .grade{ color: spin(@ratingscolor,-30); }}
-  .cplus, .creg, .cminus{ .grade{ color: spin(@ratingscolor,-60); }}
-  .dplus, .dreg, .dminus{ .grade{ color: spin(@ratingscolor,-90); }}
-  .fplus, .freg, .fminus{ .grade{ color: spin(@ratingscolor,-120); }}
+  .aplus{  .grade{color: darken(@a-rating, 10%); }}
+  .bplus{  .grade{color: darken(@b-rating, 10%); }}
+  .cplus{  .grade{color: darken(@c-rating, 10%); }}
+  .dplus{  .grade{color: darken(@d-rating, 10%); }}
+  .fplus{  .grade{color: darken(@f-rating, 10%); }}
+  .areg{   .grade{color: @a-rating;  }           }
+  .breg{   .grade{color: @b-rating;  }           }
+  .creg{   .grade{color: @c-rating;  }           }
+  .dreg{   .grade{color: @d-rating;  }           }
+  .freg{   .grade{color: @f-rating;  }           }
+  .aminus{ .grade{color: lighten(@a-rating, 15%);} }
+  .bminus{ .grade{color: lighten(@b-rating, 15%);} }
+  .cminus{ .grade{color: lighten(@c-rating, 15%);} }
+  .dminus{ .grade{color: lighten(@d-rating, 15%);} }
+  .fminus{ .grade{color: lighten(@f-rating, 15%);} }
   a:hover{                      
-     &.aplus, &.areg, &.aminus{ .grade{color:white} background-color: @ratingscolor; }
-     &.bplus, &.breg, &.bminus{ .grade{color:white} background-color: spin(@ratingscolor,-30); }
-     &.cplus, &.creg, &.cminus{ .grade{color:white} background-color: spin(@ratingscolor,-60); }
-     &.dplus, &.dreg, &.dminus{ .grade{color:white} background-color: spin(@ratingscolor,-90); }
-     &.fplus, &.freg, &.fminus{ .grade{color:white} background-color: spin(@ratingscolor,-120); }
+    &.aplus{  .grade{color: white;} background-color: darken(@a-rating, 10%); }
+    &.bplus{  .grade{color: white;} background-color: darken(@b-rating, 10%); }
+    &.cplus{  .grade{color: white;} background-color: darken(@c-rating, 10%); }
+    &.dplus{  .grade{color: white;} background-color: darken(@d-rating, 10%); }
+    &.fplus{  .grade{color: white;} background-color: darken(@f-rating, 10%); }
+    &.areg{   .grade{color: white;} background-color: @a-rating;  }           
+    &.breg{   .grade{color: white;} background-color: @b-rating;  }           
+    &.creg{   .grade{color: white;} background-color: @c-rating;  }           
+    &.dreg{   .grade{color: white;} background-color: @d-rating;  }          
+    &.freg{   .grade{color: white;} background-color: @f-rating;  }           
+    &.aminus{ .grade{color: white;} background-color: lighten(@a-rating, 15%);} 
+    &.bminus{ .grade{color: white;} background-color: lighten(@b-rating, 15%);} 
+    &.cminus{ .grade{color: white;} background-color: lighten(@c-rating, 15%);} 
+    &.dminus{ .grade{color: white;} background-color: lighten(@d-rating, 15%);} 
+    &.fminus{ .grade{color: white;} background-color: lighten(@f-rating, 15%);} 
   }
 }
 
