@@ -1,1 +1,4 @@
 [18-Feb-2014 06:58:46 America/Denver] PHP Fatal error:  Call to undefined function get_template_part() in /home8/geeksch1/public_html/wp-content/themes/geekscholars-roots/index.php on line 1
+[11-Jul-2014 05:26:21 America/Denver] PHP Fatal error:  Call to undefined function get_template_part() in /home8/geeksch1/public_html/wp-content/themes/geekscholars-roots/index.php on line 1
+[17-Feb-2015 19:25:19 America/Denver] PHP Fatal error:  Call to undefined function get_template_part() in /home8/geeksch1/public_html/wp-content/themes/geekscholars-roots/index.php on line 1
+[23-Mar-2015 15:34:41 America/Denver] PHP Fatal error:  Call to undefined function get_template_part() in /home8/geeksch1/public_html/wp-content/themes/geekscholars-roots/404.php on line 1

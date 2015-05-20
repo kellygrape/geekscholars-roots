@@ -26,6 +26,7 @@ Template Name: Home Page Template
       <a href="mailto:mail@geekscholars.com" title="Email GeekScholars" class="btn">
         <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/email.png" alt="Email GeekScholars">
       </a>
+      
     </nav>
   </div>
   <div class="col-sm-4 col-md-6 logo over-slider">

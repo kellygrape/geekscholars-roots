@@ -9,8 +9,8 @@
       <header class="clearfix">
         <?php $thegrade = get_field('movie_grade');  ?>
       
-        <div class="movie-review-rating col-sm-1 <?php echo $thegrade[0]->slug; ?>">
-          <span class="rating-letter"><?php echo $thegrade[0]->name; ?></span>
+        <div class="movie-review-rating col-sm-1 <?php echo $thegrade->slug; ?>">
+          <span class="rating-letter"><?php echo $thegrade->name; ?></span>
         </div>
         <div class="header-text col-sm-11">
           <h1 class="entry-title"><?php the_title(); ?></h1>

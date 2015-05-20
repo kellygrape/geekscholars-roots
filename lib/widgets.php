@@ -76,7 +76,7 @@ class GSMN_MovieReviews_FiveRecent extends WP_Widget {
     <ul class="recent5reviews">
     <?php foreach( $myposts as $post ) :  setup_postdata($post); ?>
     <?php $thegrade = get_field('movie_grade');  ?>
-    <li><a href="<?php the_permalink(); ?>" class="<?php echo $thegrade[0]->slug; ?>"><span class="grade"><?php echo $thegrade[0]->name; ?></span><?php the_title(); ?></a></li>
+    <li><a href="<?php the_permalink(); ?>" class="<?php echo $thegrade->slug; ?>"><span class="grade"><?php echo $thegrade->name; ?></span><?php the_title(); ?></a></li>
 	  <?php 
 	  endforeach; ?>
     </ul> 

@@ -11,21 +11,6 @@
 <?php endif; ?>
 <?php while (have_posts()) : the_post(); ?>
   <?php get_template_part('templates/content', 'podcast-archive'); ?>
-  <!--
-  <?php
-    // update the slider data 
-    $field_key = "field_52a8a25ef34d0";
-    update_field( $field_key, '', $post->ID );
-    $the_slider = get_post_meta($post->ID,'geekscholars_slider');
-    foreach($the_slider[0] as $k => $v){
-      $currimg = $v['geekscholars_image'];
-      $currcaption = $v['slidercaption'];
-      $value = get_field($field_key, $post->ID);
-      $value[] = array("slider_image" => $currimg, "slider_caption" => $currcaption);
-      update_field( $field_key, $value, $post->ID );
-    }
-    ?>			
-  -->		
 <?php endwhile; ?>
 
 <?php if ($wp_query->max_num_pages > 1) : ?>
