@@ -1,7 +1,7 @@
 <footer class="content-info" role="contentinfo">
   <section class="container">
   <div class="row">
-    <div class="col-sm-4 col-md-3">
+    <div class="col-sm-4">
       <nav class="social-area">
         <a href="https://www.facebook.com/geekscholars" title="Visit us on Facebook" class="btn">
           <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/facebook.png" alt="Facebook">
@@ -20,7 +20,7 @@
         </a>
       </nav>
     </div>
-    <div class="col-sm-8 col-md-9">
+    <div class="col-sm-7">
       <?php dynamic_sidebar('sidebar-footer'); ?>
       <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
     </div>
